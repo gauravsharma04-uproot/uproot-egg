@@ -178,7 +178,7 @@ def login():
             session["admin_authed"] = True
             return redirect(request.args.get("next") or url_for("dashboard"))
         error = "Incorrect password."
-    return render_template("login.html", error=error)
+    return render_template("login.html", error=error, settings=load_settings())
 
 @app.route("/admin/logout")
 def logout():
