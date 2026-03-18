@@ -1,0 +1,18 @@
+
+{% extends "layout.html" %}
+{% block body %}
+<div class="card" style="text-align:center">
+  <div class="brand">Tap to Reveal</div>
+  <h2>Your Easter Egg</h2>
+  <p class="sub">Tap the golden egg to reveal your prize.</p>
+  <form method="post" action="{{ url_for('reveal') }}">
+    <button type="submit" style="background:none;border:0;cursor:pointer">
+      <div style="margin: 10px auto 16px; width:190px;height:245px;border-radius:50% 50% 48% 48% / 58% 58% 42% 42%;
+      background:radial-gradient(circle at 35% 30%, #fff5bf 0%, #f8d567 20%, #d19c23 48%, #a87816 72%, #7c560f 100%);
+      box-shadow: inset -16px -18px 28px rgba(0,0,0,.22), inset 16px 16px 24px rgba(255,255,255,.18),0 16px 40px rgba(212,175,55,.18);
+      position:relative;"></div>
+    </button>
+    <button class="btn" type="submit">Tap Egg</button>
+  </form>
+</div>
+{% endblock %}
