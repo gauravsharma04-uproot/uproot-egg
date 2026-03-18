@@ -1,0 +1,22 @@
+
+{% extends "layout.html" %}
+{% block body %}
+<div class="card" style="text-align:center">
+  <div class="brand">Congratulations</div>
+  <h2>{{ claim["prize_title"] }}</h2>
+  <p class="sub">{{ claim["prize_subtitle"] }}</p>
+
+  <div style="border:1px dashed rgba(212,175,55,.45); background:rgba(255,255,255,.04); border-radius:18px; padding:14px; margin: 16px 0 12px;">
+    <div class="small">Show this screen to your server to redeem</div>
+    <div style="font-size:28px; font-weight:800; letter-spacing:.08em; color:var(--gold2); margin:8px 0">{{ claim["code"] }}</div>
+    <div class="small">{{ claim["first_name"] }} • {{ claim["instagram_handle"] }}</div>
+  </div>
+
+  {% if claim["redeemed"] %}
+    <div class="pill ok">Already redeemed</div>
+  {% else %}
+    <div class="pill">Not redeemed yet</div>
+  {% endif %}
+  <p class="small" style="margin-top:14px">Valid for Easter brunch only. Terms and prize values can be changed later from the control panel.</p>
+</div>
+{% endblock %}
